@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Cipher Residence</title>
+    <link rel="stylesheet" href="stylesCT.css">
+    <link rel="stylesheet" href="phone_CT.css" media="screen and (max-width: 1000px)">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="static/image/new_logo_white.png" alt="Cipher Logo">
+        </div>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="mortgage.html" class="fade-slide">Mortgage</a></li>
+            <li><a href="contact.html" class="fade-slide">Contact</a></li>
+            <li><a href="floorplan.html" class="fade-slide">Floor Plan</a></li>
+            <li><a href="concept.html" class="fade-slide">Concept</a></li>
+            <li><a href="gallery.html" class="fade-slide">Gallery</a></li>
+            <li><a href="home.html" class="fade-slide">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- 表单部分 -->
+    <div class="form-container">
+        <h2 class="fade-slide">REGISTER YOUR INTEREST WITH US TODAY</h2>
+        <div class="form-row fade-slide">
+            <div class="form-group">
+                <label for="name">NAME / NICKNAME*</label>
+                <input type="text" id="name" placeholder="NAME / NICKNAME*" required>
+            </div>
+            <div class="form-group">
+                <label for="age">AGE*</label>
+                <input type="text" id="age" placeholder="AGE*" required>
+            </div>
+        </div>
+        <div class="form-row fade-slide">
+            <div class="form-group">
+                <label for="email">EMAIL ADDRESS*</label>
+                <input type="email" id="email" placeholder="EMAIL ADDRESS*" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">PHONE NUMBER*</label>
+                <input type="tel" id="phone" placeholder="PHONE NUMBER*" required>
+            </div>
+        </div>
+
+        <!-- 住宅类型选择 -->
+        <div class="resident-options fade-slide">
+            <h3>RESIDENTIAL</h3>
+            <label><input type="radio" name="resident" value="type-a"> TYPE A 3 Bedrooms 2 Baths</label>
+            <label><input type="radio" name="resident" value="type-b"> TYPE B 3 Bedrooms 2 Baths</label>
+            <label><input type="radio" name="resident" value="type-c"> TYPE C 4 Bedrooms 2 Baths</label>
+        </div>
+
+        <!-- 消息输入框 -->
+        <div class="form-group fade-slide message-group">
+            <label for="message"><strong>MESSAGE</strong></label>
+            <textarea id="message" placeholder="Tap to enter message" rows="4"></textarea>
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="submit-section fade-slide">
+            <button onclick="submitForm()">SUBMIT</button>
+            <p>We will contact you within 30 minutes. Please wait for us.</p>
+        </div>
+    </div>
+
+    <!-- 底部联系信息 -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="static/image/new_logo_white.png" alt="Cipher Logo">
+        </div>
+        <div class="footer-contact">
+            <h3 class="fade-slide">FIND US ON</h3>
+            <p class="fade-slide">Cipher Residence Development Office Suite 205, Level 2, Borneo</p>
+            <p class="fade-slide">Business Centre, Jalan Datuk Tan Siwi, 93250 Kuching, Sarawak,</p>
+            <p class="fade-slide">Malaysia</p>
+            <p class="fade-slide"><strong>Tel:</strong> 086-123456</p>
+            <p class="fade-slide"><strong>Fax:</strong> 086-789101</p>
+            <p class="fade-slide"><strong>Email:</strong> cipherresidence@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="scriptCT.js"></script>
+    <script src="change.js"></script>
+    <script src="smoth_moving.js"></script>
+</body>
+</html>

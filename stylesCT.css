@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-slide {
+    opacity: 0;
+    animation: fadeSlideIn 0.5s ease-in-out forwards;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    transition: padding 0.3s ease; /* 平滑过渡 padding */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 50px;
+    margin-right: 10px;
+    transition: width 0.3s ease; /* 平滑过渡 logo 大小 */
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease; /* 平滑过渡导航链接的变化 */
+}
+
+.nav-links li {
+    margin-left: 120px;
+    position: relative;
+    transition: margin-left 0.3s ease; /* 平滑过渡间距 */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    transition: font-size 0.3s ease; /* 平滑过渡字体大小 */
+}
+
+.nav-links a:hover {
+    color: #ccc;
+}
+
+.nav-links a.current {
+    color: #aaa;
+    font-weight: 700;
+}
+
+.nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 55px;
+    background-color: #fff;
+    transition: right 0.3s ease, height 0.3s ease; /* 平滑过渡分隔线 */
+}
+
+body {
+    background-image: url('static/image/pexels-francesco-ungaro-4322027.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    max-width: 99%;
+    margin: 100px auto 10px;
+    padding: 50px;
+    background: rgba(83, 83, 83, 0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 48px;
+    text-transform: uppercase;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 45px;
+}
+
+.form-group {
+    width: 48%;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    color: #333;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.message-group {
+    margin-bottom: 45px;
+}
+
+.resident-options {
+    margin-top: 50px;
+}
+
+.resident-options h3 {
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.resident-options label {
+    display: inline-block;
+    margin-right: 40px;
+    font-size: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    transform: scale(1.8);
+}
+
+.submit-section {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+
+button {
+    background-color: #555;
+    color: white;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+.submit-section p {
+    margin-left: 40px;
+    font-size: 20px;
+}
+
+.footer {
+    background: black;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-right: 10px;
+    margin-left: 200px;
+}
+
+.footer-contact {
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 650px;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* 媒体查询：1300px */
+@media (max-width: 1300px) {
+    .navbar {
+        padding: 20px 45px;
+    }
+
+    .navbar .logo img {
+        width: 48px;
+        margin-right: 9px;
+    }
+
+    .nav-links li {
+        margin-left: 100px; /* 逐步减小间距 */
+    }
+
+    .nav-links a {
+        font-size: 19px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        right: -50px; /* 与 margin-left 成比例 */
+        height: 52px;
+    }
+}
+
+/* 媒体查询：1200px */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 18px 40px;
+    }
+
+    .navbar .logo img {
+        width: 46px;
+        margin-right: 8px;
+    }
+
+    .nav-links li {
+        margin-left: 85px;
+    }
+
+    .nav-links a {
+        font-size: 18.5px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        right: -42.5px;
+        height: 48px;
+    }
+}
+
+/* 媒体查询：1100px */
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 16px 35px;
+    }
+
+    .navbar .logo img {
+        width: 44px;
+        margin-right: 8px;
+    }
+
+    .nav-links li {
+        margin-left: 70px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        right: -35px;
+        height: 45px;
+    }
+}

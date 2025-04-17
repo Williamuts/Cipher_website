@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background: url('static/image/pexels-francesco-ungaro-4322027.jpg') no-repeat center center/cover;
+    background-attachment: scroll;
+    min-height: 100vh;
+    position: relative;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-slide {
+    opacity: 0;
+    animation: fadeSlideIn 0.5s ease-in-out forwards;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    transition: padding 0.3s ease; /* 平滑过渡 padding */
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 50px;
+    margin-right: 10px;
+    transition: width 0.3s ease; /* 平滑过渡 logo 大小 */
+}
+
+.hamburger {
+    display: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease; /* 平滑过渡导航链接的变化 */
+}
+
+.nav-links li {
+    margin-left: 120px;
+    position: relative;
+    transition: margin-left 0.3s ease; /* 平滑过渡间距 */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400;
+    transition: font-size 0.3s ease; /* 平滑过渡字体大小 */
+}
+
+.nav-links a:hover {
+    color: #ccc;
+}
+
+.nav-links a.current {
+    color: #aaa;
+    font-weight: 700;
+}
+
+.nav-links li:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 55px;
+    background-color: #fff;
+    transition: right 0.3s ease, height 0.3s ease; /* 平滑过渡分隔线 */
+}
+
+.gallery {
+    margin-top: 100px;
+    text-align: center;
+    padding: 50px 0;
+    background: none;
+}
+
+.gallery h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: visible;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 600px;
+    transform: translateZ(0);
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
+    margin: 0;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    will-change: transform, opacity, width, height;
+    opacity: 1;
+}
+
+.carousel img.left {
+    transform: translateX(-600px);
+    z-index: 0;
+}
+
+.carousel img.center {
+    width: 900px;
+    height: 600px;
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel img.right {
+    transform: translateX(600px);
+    z-index: 1;
+}
+
+.carousel img.hidden-left {
+    transform: translateX(-900px);
+    opacity: 0;
+}
+
+.carousel img.hidden-right {
+    transform: translateX(900px);
+    opacity: 0;
+}
+
+.zoomed-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.zoomed {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    cursor: default;
+}
+
+.description {
+    text-align: center;
+    padding: 50px 0;
+    background: none;
+}
+
+.description h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.description p {
+    font-size: 18px;
+    font-weight: 400;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.footer {
+    background: black;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 200px;
+    margin-right: 10px;
+    margin-left: 200px;
+}
+
+.footer-contact {
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: 650px;
+}
+
+.footer-contact h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 35px;
+}
+
+.footer-contact p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+/* 媒体查询：1300px */
+@media (max-width: 1300px) {
+    .navbar {
+        padding: 20px 45px;
+    }
+
+    .navbar .logo img {
+        width: 48px;
+        margin-right: 9px;
+    }
+
+    .nav-links li {
+        margin-left: 100px; /* 逐步减小间距 */
+    }
+
+    .nav-links a {
+        font-size: 19px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        right: -50px; /* 与 margin-left 成比例 */
+        height: 52px;
+    }
+}
+
+/* 媒体查询：1200px */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 18px 40px;
+    }
+
+    .navbar .logo img {
+        width: 46px;
+        margin-right: 8px;
+    }
+
+    .nav-links li {
+        margin-left: 85px;
+    }
+
+    .nav-links a {
+        font-size: 18.5px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        right: -42.5px;
+        height: 48px;
+    }
+}
+
+/* 媒体查询：1100px */
+@media (max-width: 1100px) {
+    .navbar {
+        padding: 16px 35px;
+    }
+
+    .navbar .logo img {
+        width: 44px;
+        margin-right: 8px;
+    }
+
+    .nav-links li {
+        margin-left: 70px;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+    }
+
+    .nav-links li:not(:last-child)::after {
+        right: -35px;
+        height: 45px;
+    }
+}
